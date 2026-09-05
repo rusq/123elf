@@ -1,5 +1,5 @@
 Name:           lotus123r3
-Version:        1.0.0rc3
+Version:        1.0.0rc4
 Release:        4%{?dist}
 Summary:        Create, modify, and process financial or scientific models.
 License:        Abandonware
@@ -7,7 +7,7 @@ URL:            https://github.com/taviso/123elf
 Source0:        https://github.com/taviso/123elf/archive/refs/tags/v%{version}.tar.gz
 Source1:        https://archive.org/compress/123-unix/formats=ISO%20IMAGE&file=/123-unix.zip
 Source2:        https://ftp.gnu.org/gnu/binutils/binutils-2.38.tar.xz
-Requires:       ncurses-libs(x86-32) glibc(x86-32)
+Requires:       ncurses-libs(x86-32) glibc(x86-32) libatomic(x86-32)
 
 %description
 The 123 command is a spreadsheet application for UNIX-based systems that can
@@ -33,6 +33,9 @@ make install prefix=%{buildroot}/%{_prefix}
 %{_prefix}/bin/123
 
 %changelog
+* Sat Jun 27 2026 Tavis Ormandy <taviso@gmail.com>
+- Support Fedora 44.
+
 * Sun Jul 10 2022 Tavis Ormandy <taviso@gmail.com>
 - New release.
 - Make specfile version neutral.

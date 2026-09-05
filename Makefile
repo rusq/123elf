@@ -32,7 +32,7 @@ debug: OPTFLAGS=-ggdb3 -O0
 debug: all
 
 check:
-	@objdump --info | egrep -q '^coff-i386$$' || (echo "$$BFD_TARGET_ERROR"; false)
+	@objdump --info | grep -Eq '^coff-i386$$' || (echo "$$BFD_TARGET_ERROR"; false)
 
 orig/123.o:
 	@echo You need to run the extract.sh script to get the 1-2-3 files.
